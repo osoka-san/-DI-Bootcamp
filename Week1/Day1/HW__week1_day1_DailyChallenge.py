@@ -17,3 +17,4 @@ str_list = list(str_input)
 random.shuffle(str_list)
 jumbled = ''.join(str_list)
 print(f"The jumbled string is: {jumbled}")
+
