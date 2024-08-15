@@ -38,15 +38,15 @@ class Text:
 # Then, we will analyze a text coming from an external text file. Download the_stranger.txt file.
 
 # Implement a classmethod that returns a Text instance but with a text file:
-@classmethod
-def from_file(cls):
-    try:
-        with open('the_stranger.txt', 'r') as file:
-            text = file.read()
-        return cls(text)
-    except FileNotFoundError:
-        print(f"File 'the_stranger.txt' not found.")
-        return None
+    @classmethod
+    def from_file(cls):
+        try:
+            with open('the_stranger.txt', 'r') as file:
+                text = file.read()
+            return cls(text)
+        except FileNotFoundError:
+            print(f"File 'the_stranger.txt' not found.")
+            return None
 #     >>> Text.from_file('the_stranger.txt')
 text = Text("A good book would sometimes cost as much as a good house.")
 print("Frequency of 'good':", text.word_frequency("good"))
@@ -57,7 +57,7 @@ text_instance = Text.from_file()
 
 if text_instance:
     print("Most common word:", text_instance.most_common_word())
-    print("Unique words:", text_instance.unique_words()[:10])
+    print("Unique words:", text_instance.unique_words())
     print("Frequency of 'the':", text_instance.word_frequency('the'))
 
 # Now, use the provided the_stranger.txt file and try using the class you created above.
